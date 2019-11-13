@@ -14,14 +14,20 @@ function App() {
   ]);
 
   const addNewTeammate = teammate => {
-    const newTeammate
-  }
+    const newTeammate = {
+      id: Date.now(),
+      name: teammate.name,
+      email: teammate.email,
+      role: teammate.role
+    };
+    setTeammateList([...teammateList, newTeammate]);
+  };
 
   return (
     <div className="App">
       <h1>The Fellowship</h1>
-      <Form />
-      <Teammate />
+      <Form addNewTeammate={addNewTeammate} />
+      <Teammate teammateList={teammateList} />
     </div>
   );
 }
