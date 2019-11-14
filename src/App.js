@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import Form from "./components/Form";
 import Teammate from "./components/Teammate";
+import styled from "styled-components";
 import "./App.css";
+
+const Headline = styled.h1`
+  color: white;
+  font-size: 5rem;
+`;
 
 function App() {
   const [teammateList, setTeammateList] = useState([
     {
       id: 1,
-      name: "",
-      email: "",
-      role: ""
+      name: "Gandalf",
+      email: "gandalf@lotr.com",
+      role: "The White Wizard"
     }
   ]);
 
@@ -25,7 +31,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>The Fellowship</h1>
+      <Headline>The Fellowship</Headline>
       <Form addNewTeammate={addNewTeammate} />
       <Teammate teammateList={teammateList} />
     </div>
